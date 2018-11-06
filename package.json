@@ -1,5 +1,13 @@
 {
   "name": "memories-of-time",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "materialize-css": "^1.0.0"
+  },
+  "version": "1.0.0",
+  "description": "annotation of time-related memories",
+  "main": "index.js",
+  "repository": "https://github.com/leonardorpr/memories-of-time.git",
+  "author": "leonardorpr",
+  "license": "MIT"
 }
