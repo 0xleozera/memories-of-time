@@ -11,9 +11,7 @@ module MemoriesService
     memory.lat = informations["latitude"]
     memory.long = informations["longitude"]
     memory.temperature = current_weather["main"]["temp"]
-
-    # TODO - find_by weather - after create seeds
-    # memory.weather = Weather.find_by(description: current_weather["weather"][0]["main"])
+    memory.weather = Weather.find_by(description: current_weather["weather"][0]["main"])
 
     return memory
   end

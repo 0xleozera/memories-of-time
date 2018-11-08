@@ -1,6 +1,7 @@
 class MemoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_memory, only: [:show, :edit, :update, :destroy]
+  before_action :set_weather_options, only: [:new, :create, :edit, :update]
 
   def index
     @memories = MemoriesService.get_all(current_user)
@@ -51,6 +52,10 @@ class MemoriesController < ApplicationController
   end
 
   private
+  def set_weather_options
+    @weather_options = WeatherService.list_weathers
+  end
+
     def set_memory
       @memory = MemoriesService.get_by_id(current_user, params)
     end
