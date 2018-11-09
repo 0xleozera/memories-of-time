@@ -13,10 +13,17 @@
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
+
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
-    <%= yield %>
+    
+    <div class="container">
+      <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+      
+      <%= yield %>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["GOOGLE_MAPS_ACCESS_KEY"] %>&libraries=places&callback=initMap" async defer></script>
   </body>
 </html>
