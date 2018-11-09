@@ -11,7 +11,7 @@ class MemoriesController < ApplicationController
   end
 
   def new
-    @memory = MemoriesService.new_memory
+    @memory = MemoriesService.new_memory(request.remote_ip)
   end
 
   def edit

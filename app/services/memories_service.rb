@@ -1,8 +1,8 @@
 module MemoriesService
   module_function
 
-  def new_memory
-    informations = Ipstack::API.check
+  def new_memory(ip)
+    informations = fetch_current_location(ip)
     current_weather = fetch_current_weather(informations["latitude"], informations["longitude"])
     
     memory = Memory.new
@@ -33,7 +33,11 @@ module MemoriesService
 
   def fetch_current_weather(lat, long)
     response = HTTParty.get("https://api.openweathermap.org/data/2.5/weather?lat=#{lat}&lon=#{long}&APPID=#{ENV['OPEN_WEATHER_ACCESS_KEY']}")
-    puts response
+    return response
+  end
+
+  def fetch_current_location(ip)
+    response = HTTParty.get("http://api.ipstack.com/#{ip}?access_key=#{ENV['IPSTACK_ACCESS_KEY']}")
     return response
   end
 end
