@@ -14,4 +14,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require materialize-css/dist/js/materialize.min

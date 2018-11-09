@@ -10,40 +10,44 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :weather_id %>
-    <%= form.select("weather_id", @weather_options, { include_blank: 'Selecione' }) %>
-  </div>
-
-  <div class="field">
+  
+  <div class="form-group">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :city %>
-    <%= form.text_field :city %>
+    <%= form.text_field :city, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :temperature %>
-    <%= form.text_field :temperature %>
-  </div>
-
-  <div class="field">
-    <%= form.label :lat %>
-    <%= form.text_field :lat %>
-  </div>
-
-  <div class="field">
-    <%= form.label :long %>
-    <%= form.text_field :long %>
-  </div>
-
-  <div class="field">
+  <div class="form-group">
     <%= form.label :day %>
-    <%= form.text_field :day, class: "datepicker" %>
+    <%= form.date_field :day, class: "form-control" %>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col">
+      <%= form.label :lat %>
+      <%= form.text_field :lat, class: "form-control" %>
+    </div>
+
+    <div class="form-group col">
+      <%= form.label :long %>
+      <%= form.text_field :long, class: "form-control" %>    
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col">
+      <%= form.label :temperature %>
+      <%= form.text_field :temperature, class: "form-control" %>
+    </div>
+
+    <div class="form-group col">
+      <%= form.label :weather_id %>
+      <%= form.select("weather_id", @weather_options, { include_blank: 'Selecione' }, class: "form-control") %>
+    </div>
   </div>
 
   <div id="map"></div>

@@ -42,6 +42,9 @@ gem 'ipstack', '~> 0.0.1'
 # HTTP Requests
 gem 'httparty'
 
+# Style
+gem 'bootstrap', '~> 4.1.3'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
