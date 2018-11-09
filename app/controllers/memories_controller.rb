@@ -61,6 +61,6 @@ class MemoriesController < ApplicationController
     end
 
     def memory_params
-      params.require(:memory).permit(:description, :city, :temperature, :lat, :long, :day, :weather)
+      params.require(:memory).permit(:description, :city, :temperature, :lat, :long, :day, :weather_id)
     end
 end

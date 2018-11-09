@@ -1,34 +1,47 @@
+<%= render 'topbar' %>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @memory.description %>
-</p>
+<form>
+  <div class="form-group">
+    <%= label_tag nil, :description %>
+    <%= text_area_tag nil, @memory.description, class: "form-control", disabled: true %>
+  </div>
 
-<p>
-  <strong>City:</strong>
-  <%= @memory.city %>
-</p>
+  <div class="form-group">
+    <%= label_tag nil, :city %>
+    <%= text_field_tag nil, @memory.city, class: "form-control", disabled: true %>
+  </div>
 
-<p>
-  <strong>Temperature:</strong>
-  <%= @memory.temperature %>
-</p>
+  <div class="form-group">
+    <%= label_tag nil, :day %>
+    <%= date_field_tag nil, @memory.day, class: "form-control", disabled: true %>
+  </div>
 
-<p>
-  <strong>Lat:</strong>
-  <%= @memory.lat %>
-</p>
+  <div class="form-row">
+    <div class="form-group col">
+      <%= label_tag nil, :lat %>
+      <%= text_field_tag nil, @memory.lat, class: "form-control", disabled: true %>
+    </div>
 
-<p>
-  <strong>Long:</strong>
-  <%= @memory.long %>
-</p>
+    <div class="form-group col">
+      <%= label_tag nil, :long %>
+      <%= text_field_tag nil, @memory.long, class: "form-control", disabled: true %>    
+    </div>
+  </div>
 
-<p>
-  <strong>Day:</strong>
-  <%= @memory.day %>
-</p>
+  <div class="form-row">
+    <div class="form-group col">
+      <%= label_tag nil, :temperature %>
+      <%= text_field_tag nil, @memory.temperature, class: "form-control", disabled: true %>
+    </div>
+
+    <div class="form-group col">
+      <%= label_tag nil, :weather %>
+      <%= text_field_tag nil, @memory.weather.description, class: "form-control", disabled: true %>
+    </div>
+  </div>
+</form>
+
 
 <%= link_to 'Edit', edit_memory_path(@memory) %> |
 <%= link_to 'Back', memories_path %>

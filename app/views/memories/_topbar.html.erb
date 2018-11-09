@@ -1,0 +1,8 @@
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <%= link_to 'Memories', memories_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class:"nav-link") %>
+  </li>
+</ul>
